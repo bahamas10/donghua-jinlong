@@ -1,0 +1,53 @@
+#!/usr/bin/env bash
+#
+# if you're reading this you suck at programming
+#
+# Author: Dave Eddy <dave@daveeddy.com>
+# Date: April 05, 2024
+# License: MIT
+
+RED=$(tput setaf 1)
+GREEN=$(tput setaf 2)
+CYAN=$(tput setaf 6)
+BOLD=$(tput bold)
+RST=$(tput sgr0)
+
+task() {
+	local sec=$1
+	local text=$2
+
+	echo -ne "[${CYAN}task${RST}] $text... "
+	sleep "$sec"
+	echo -e "${GREEN}done.${RST}"
+}
+
+echo -e "${BOLD}--- Accessing Dark Web ---${RST}"
+
+task 3 'locating glycine'
+task 2 'ensuring industrial grade'
+task 5 'checking installed programs'
+task 2 'installing curl'
+task 3 'installing openssl'
+task 8 'installing xz (v5.6.0)'
+
+tput setaf 1
+echo -e "$RED"
+echo 'error: unknown user'
+sleep 3
+echo 'remote shell requested'
+sleep 1
+echo -e "$RST"
+echo -n 'root@localhost# '
+sleep 8
+echo -n 'h'
+sleep 1
+echo -n 'a'
+sleep .5
+echo -n 'l'
+sleep 1
+echo -n 't'
+sleep 1
+echo
+echo -n 'root@localhost# '
+echo
+# lmao
